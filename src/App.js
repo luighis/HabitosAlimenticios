@@ -1,29 +1,30 @@
-import Head from './components/Head';
-import DashboardPage from './pages/DashboardPage';
-import HabitosPage from './pages/HabitosPage';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Head from "./components/Head";
+import DashboardPage from "./pages/DashboardPage";
+import HabitPage from "./pages/HabitPage";
+import SummaryPage from "./pages/SummaryPage";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from 'react-router-dom';
-import './App.css';
+} from "react-router-dom";
 
 const App = () => {
   return (
     <Router>
-      <Head/>
-      <Navbar/>
+      <Head />
+      <Navbar />
       <Switch>
-          <Route exact path="/" component={DashboardPage} />
-          <Route exact path="/HabitosPage" component={HabitosPage} />
-          <Redirect to="/" />
+        <Route exact path="/" component={DashboardPage} />
+        <Route exact path="/habitos" component={HabitPage} />
+        <Route exact path="/resumen" component={SummaryPage} />
+        <Redirect to="/" />
       </Switch>
-      <Footer/>
+      <Footer />
     </Router>
   );
-}
+};
 
 export default App;
